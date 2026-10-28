@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: 244 247 245;
+  --surface: 255 255 255;
+  --soft: 238 243 240;
+  --line: 225 232 228;
+  --ink: 15 26 21;
+  --muted: 91 107 99;
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: 9 14 12;
+  --surface: 17 25 22;
+  --soft: 24 34 30;
+  --line: 34 47 41;
+  --ink: 232 239 235;
+  --muted: 147 163 155;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans leading-normal;
+  }
+  h1, h2, h3, h4 {
+    @apply leading-tight;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 disabled:opacity-60;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-card;
+  }
+  .table-head {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted whitespace-nowrap;
+  }
+  .table-cell {
+    @apply px-4 py-3 text-sm align-top;
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgb(var(--line)); border-radius: 8px; }

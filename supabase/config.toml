@@ -1,0 +1,11 @@
+[functions.provider]
+verify_jwt = true
+
+[functions.auth-login]
+verify_jwt = false
+
+[functions.api]
+verify_jwt = false
+
+[functions.email]
+verify_jwt = true
